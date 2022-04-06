@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Data
 @Entity
@@ -15,6 +16,16 @@ public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long studentId;
+	@NotBlank(message = "Please Add Department Name")
+/*    @Length(max = 5, min = 1)
+    @Size(max = 10, min = 0 )
+    @Email
+    @Positive
+    @Negative
+    @PositiveOrZero
+    @Future
+    @FutureOrPresent
+    @PastOrPresent*/
 	private String firstName;
 	private String lastName;
 	private String email;
